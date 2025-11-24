@@ -17,16 +17,16 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Ensure folder exists
-        run: mkdir -p .github/profile
+        run: mkdir -p profile
 
       - name: Commit changes if source differs from destination or missing
         run: |
-          if [ ! -f .github/profile/README.md ] || ! cmp -s README.md .github/profile/README.md; then
-            cp README.md .github/profile/README.md
-            git add .github/profile/README.md
+          if [ ! -f profile/README.md ] || ! cmp -s README.md profile/README.md; then
+            cp README.md profile/README.md
+            git add profile/README.md
             git -c user.name="${{ github.actor }}" \
                 -c user.email="${{ github.actor }}@users.noreply.github.com" \
-                commit -m "chore: sync .github/profile/README.md from root README.md"
+                commit -m "chore: sync profile/README.md from root README.md"
             git push
           else
             echo "No changes to commit"
