@@ -1,0 +1,31 @@
+name: Sync profile README
+
+on:
+  push:
+    paths:
+      - 'README.md'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Sync README to .github/profile/README.md
+        run: |
+          mkdir -p .github/profile
+          cp README.md .github/profile/README.md
+          if ! git diff --quiet -- .github/profile/README.md; then
+            git add .github/profile/README.md
+            # Use the triggering actor for the commit author/committer (applied only to this commit)
+            git -c user.name="${{ github.actor }}" -c user.email="${{ github.actor }}@users.noreply.github.com" commit -m "chore: sync .github/profile/README.md from root README.md"
+            git push
+          else
+            echo "No changes to commit"
+          fi
