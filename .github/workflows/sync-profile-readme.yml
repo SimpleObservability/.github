@@ -25,7 +25,7 @@ jobs:
       - name: Copy README.md to profile folder
         run: cp README.md .github/profile/README.md
 
-      - name: Debug: show content of source and destination
+      - name: 'Debug: show content of source and destination'
         run: |
           echo "===== Root README.md ====="
           head -n 10 README.md
