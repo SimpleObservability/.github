@@ -12,22 +12,21 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
+          fetch-depth: 0   # Needed so git diff works correctly
 
-      - name: Create folder 
-        run : mkdir -p .github/profile
-      - name: Copy README.md to .github/profile/README.md
+      - name: Ensure folder exists
+        run: mkdir -p .github/profile
+
+      - name: Copy README.md to profile folder
         run: cp README.md .github/profile/README.md
-      - name: Commit changes if there are any
+
+      - name: Commit changes if any
         run: |
-          if ! git diff --quiet -- .github/profile/README.md; then
+          if ! git diff --exit-code HEAD -- .github/profile/README.md; then
             git add .github/profile/README.md
-            # Use the triggering actor for the commit author/committer (applied only to this commit)
-            git -c user.name="${{ github.actor }}" -c user.email="${{ github.actor }}@users.noreply.github.com" commit -m "chore: sync .github/profile/README.md from root README.md"
-            git push
-          else
-            echo "No changes to commit"
-          fi
+            git -c user.name
