@@ -17,10 +17,12 @@ jobs:
         with:
           persist-credentials: true
 
-      - name: Sync README to .github/profile/README.md
+      - name: Create folder 
+        run : mkdir -p .github/profile
+      - name: Copy README.md to .github/profile/README.md
+        run: cp README.md .github/profile/README.md
+      - name: Commit changes if there are any
         run: |
-          mkdir -p .github/profile
-          cp README.md .github/profile/README.md
           if ! git diff --quiet -- .github/profile/README.md; then
             git add .github/profile/README.md
             # Use the triggering actor for the commit author/committer (applied only to this commit)
