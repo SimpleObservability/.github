@@ -8,7 +8,7 @@
 
   Simple: Observability is a lightweight web dashboard for monitoring the health of your services across multiple environments (DEV, UAT, PROD, etc). It uses a straightforward health check schema that can be implemented in any technology stack, making it easy to integrate with your existing services.
 
-  <img width="1496" height="722" alt="image" src="https://github.com/user-attachments/assets/5ab46b14-e8c2-4aee-8dea-0ef3d4160d65" />
+  <img width="1496" height="722" alt="image" src="https://i.imgur.com/p5zUd97.png" />
 
 
 ## Health Check Schema
@@ -41,7 +41,7 @@ We provide easy-to-use packages for popular languages and frameworks to help you
 
 | Language/Framework | Package Name | Package Manager | Status |
 |-------------------|--------------|----------------|---------|
-| **C#/.NET** | `SimpleObservability.AspNetCore` | NuGet | 🚧 Planned |
+| C# / .NET | [SimpleObservability.Client.DotNet](https://github.com/SimpleObservability/SimpleObservability.Client.DotNet) | ✅ Available |
 | **Go** | `github.com/simple-observability/go` | go mod | 🚧 Planned |
 | **Rust** | `simple-observability` | Cargo | 🚧 Planned |
 | **JavaScript/Node.js** | `simple-observability-js` | npm | 🚧 Planned |
