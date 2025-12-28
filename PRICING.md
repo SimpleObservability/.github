@@ -76,7 +76,7 @@ You have 30 days from crossing the threshold (250 employees or $1M revenue) to p
 **Absolutely!** Use the Community License for evaluation. Once you determine it meets your needs and you're ready for commercial use, purchase a license.
 
 ### What if I'm a startup?
-If you're under the small business thresholds (<5 employees, <$1M revenue), you qualify for the free Community License. Once you grow beyond that, we're happy to work with you on timing and payment terms.
+If you're under the small business thresholds (<250 employees, <$1M revenue), you qualify for the free Community License. Once you grow beyond that, we're happy to work with you on timing and payment terms.
 
 ### Do you offer monthly payment plans?
 Currently, licenses are annual. However, we're open to discussing payment arrangements for qualifying organizations. Contact us!
